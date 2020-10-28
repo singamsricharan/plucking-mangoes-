@@ -1,21 +1,20 @@
 class Stone{
-    constructor(x,y,width,height){
+    constructor(x,y,r){
         var options={
             isStatic:false,
             restitution:0,
             friction:1,
             density:1.2
         }
-        this.x=x;
+        this.x=x; 
         this.y=y;
-        this.width=width;
-        this.height=height;
-        this.image=addImage("images/stone.png")
-        this.body=rect(x,y,width,height,options);
+        this.r=r;
+        this.addImage("images/stone.png")
+        this.body=rect.circle(x,y,r,options);
         World.add(world,this.body);
     }
     display(){
-        imageMode(CENTER);
-        image(x,y,width,height)
+        rectMode(CENTER);
+        rect(x,y,r)
     }
 }
