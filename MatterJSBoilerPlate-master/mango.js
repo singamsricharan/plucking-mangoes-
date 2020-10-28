@@ -8,7 +8,7 @@ class Mango{
         this.x=x;
         this.y=y;
         this.r=r;
-        this.addImage("'plucking mangoes'/mango.png");
+        this.image=addImage("images/mango.png");
         this.body=Bodies.circle(x,y,r,options);
         World.add(world,this.body)
     }

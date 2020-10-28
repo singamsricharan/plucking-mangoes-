@@ -1,5 +1,5 @@
 class Stone{
-    constructor(x,y,r){
+    constructor(x,y,width,height){
         var options={
             isStatic:false,
             restitution:0,
@@ -8,12 +8,14 @@ class Stone{
         }
         this.x=x;
         this.y=y;
-        this.r=r;
-        this.addImage("'plucking mangoes'/stone.png")
-        this.body=Bodies.circle(x,y,r,options);
+        this.width=width;
+        this.height=height;
+        this.image=addImage("images/stone.png")
+        this.body=rect(x,y,width,height,options);
         World.add(world,this.body);
     }
     display(){
-        
+        imageMode(CENTER);
+        image(x,y,width,height)
     }
 }
