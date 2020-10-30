@@ -9,12 +9,13 @@ class Stone{
         this.x=x; 
         this.y=y;
         this.r=r;
-        this.addImage("images/stone.png")
-        this.body=rect.circle(x,y,r,options);
+        this.image=loadImage("images/stone.png")
+        this.body=circle(x,y,r,options);
         World.add(world,this.body);
     }
     display(){
-        rectMode(CENTER);
-        rect(x,y,r)
+        image(this.image,200,200)
+        ellipseMode(CENTER);
+        circle(x,y,r)
     }
 }
