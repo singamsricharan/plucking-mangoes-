@@ -4,18 +4,15 @@ class Stone{
             isStatic:false,
             restitution:0,
             friction:1,
-            density:1.2
         }
-        this.x=x; 
-        this.y=y;
         this.r=r;
         this.image=loadImage("images/stone.png")
-        this.body=circle(x,y,r,options);
+        this.body=Bodies.circle(x,y,r,options);
         World.add(world,this.body);
     }
     display(){
-        image(this.image,200,200)
+        image(this.image,this.body.position.x,this.body.position.y,40,40)
         ellipseMode(CENTER);
-        circle(x,y,r)
+        ellipseMode(this.image,this.x,this.y,this.r)
     }
 }
